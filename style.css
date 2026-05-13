@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -14,99 +14,132 @@ body {
     padding: 20px;
 }
 
-.container {
-    max-width: 1200px;
+.calculator-container {
+    max-width: 600px;
     width: 100%;
-    background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 h1 {
-    text-align: center;
-    color: #333;
-    margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-/* Основной контейнер слайдера */
-.swiper {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
-    overflow: hidden;
-    position: relative;
-}
-
-.swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.swiper-slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-    border-radius: 15px;
-}
-
-/* Стили для стрелок */
-.swiper-button-next,
-.swiper-button-prev {
     color: white;
-    background: rgba(0,0,0,0.5);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    transition: background 0.3s;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    background: rgba(0,0,0,0.8);
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-    font-size: 20px;
-}
-
-/* Стили для пагинации (точек) */
-.swiper-pagination-bullet {
+.calculator-card {
     background: white;
-    opacity: 0.7;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
-.swiper-pagination-bullet-active {
-    background: #ff6b6b;
-    opacity: 1;
+.form-group {
+    margin-bottom: 20px;
 }
 
-/* Адаптивность для мобильных */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: #2a5298;
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.1);
+}
+
+select.form-control {
+    cursor: pointer;
+    background-color: white;
+}
+
+input.form-control[readonly] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+.form-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.btn-calculate {
+    width: 100%;
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+.btn-calculate:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-calculate:active {
+    transform: translateY(0);
+}
+
+.result-area {
+    margin-top: 25px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    min-height: 150px;
+}
+
+.result-area .error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.result-area .success {
+    color: #27ae60;
+    font-weight: bold;
+}
+
 @media (max-width: 768px) {
-    .container {
-        padding: 15px;
+    .calculator-card {
+        padding: 20px;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
-    .swiper-button-next,
-    .swiper-button-prev {
-        width: 30px;
-        height: 30px;
+    .form-control {
+        padding: 10px 12px;
+        font-size: 0.9rem;
     }
-    .swiper-button-next:after,
-    .swiper-button-prev:after {
-        font-size: 16px;
+    .btn-calculate {
+        padding: 12px;
+        font-size: 1rem;
     }
-}
-
-.info {
-    text-align: center;
-    margin-top: 20px;
-    color: #555;
-    font-size: 0.9rem;
+    .result-area {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
 }
