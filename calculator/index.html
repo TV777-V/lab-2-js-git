@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Калькулятор вкладов — Лабораторная работа №2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <h1>🏦 Калькулятор банковских вкладов</h1>
+        
+        <div class="calculator-card">
+            <div class="form-group">
+                <label for="deposit-type">📊 Вид вклада:</label>
+                <select id="deposit-type" class="form-control">
+                    <option value="replenishable">Пополняемый</option>
+                    <option value="fixed">Срочный</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="term">⏱️ Срок вклада:</label>
+                <select id="term" class="form-control">
+                    <!-- Заполняется через JS -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="amount">💰 Сумма вклада (₽):</label>
+                <input type="number" id="amount" class="form-control" placeholder="Введите сумму" min="1000" step="1000" value="10000">
+                <small class="form-hint">Минимальная сумма: 1 000 ₽</small>
+            </div>
+            
+            <div class="form-group">
+                <label for="interest-rate">📈 Процентная ставка (% годовых):</label>
+                <input type="text" id="interest-rate" class="form-control" readonly disabled>
+            </div>
+            
+            <button id="calculate-btn" class="btn-calculate">🧮 Рассчитать</button>
+            
+            <div id="result" class="result-area">
+                <!-- Результат будет показан здесь -->
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
